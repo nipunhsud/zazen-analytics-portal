@@ -1,10 +1,10 @@
 {
-  "name": "skeleton",
+  "name": "Zazen",
   "version": "0.0.1",
-  "description": "Skeleton for a Backbone, Marionette application using Require.js, Bower, Grunt and LESS",
+  "description": "Zazen Analytics Portal",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mezod/skeleton"
+    "url": "https://github.com/seeknirvana/zazen-analytics-portal"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

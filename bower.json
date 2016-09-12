@@ -1,5 +1,5 @@
 {
-  "name": "skeleton init",
+  "name": "Zazen init",
   "version": "1.0.0",
   "dependencies": {
     "todomvc-common":"latest",
