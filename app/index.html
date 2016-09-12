@@ -7,10 +7,26 @@
     <meta name="description" content="A simple kanban for multiple personal projects.">
     <meta name="viewport" content="width=device-width">
 
-    <link rel="stylesheet" media="screen" href="styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="js/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="styles/styles.less" type="text/css" />
   </head>
 
   <body>
-    <script data-main="scripts/main.js" src="scripts/vendor/requirejs/require.js"></script>
+    <div class="wrapper container">
+        <div class="heading">
+                <span id="main-nav">
+                </span>
+                <h1 class="text-muted">Zazen Analytics</h1>
+                <p class="text-muted">Taking effort our of data management and Analytics!!</p>
+        </div>
+
+      <!--   <div id="notification"></div>/#notification -->
+      <div class="row">
+        <div class="col-md-3" id="sidebar"></div>
+        <div class="col-md-15" id="content"></div>
+      </div>
+        <div class="footer" id="footer"></div>
+    </div>
+    <script data-main="js/main.js" src="js/vendor/requirejs/require.js"></script>
   </body>
 </html>

@@ -3,9 +3,12 @@ require.config({
     'jquery': 'vendor/jquery/dist/jquery',
     'underscore': 'vendor/underscore/underscore',
     'backbone': 'vendor/backbone/backbone',
-    'backbone.babysitter': 'vendor/backbone.babysitter/lib/backbone.babysitter.js',
-    'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr.js',
-    'backbone.marionette': 'vendor/backbone.marionette/lib/core/backbone.marionette.js',
+    'text':"vendor/requirejs-text/text",
+    'backbone.babysitter': 'vendor/backbone.babysitter/lib/backbone.babysitter',
+    'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr',
+    'marionette': 'vendor/marionette/lib/core/backbone.marionette',
+    'tpl': 'lib/tpl',
+    'bootstrap': 'lib/bootstrap.min'
   },
   shim: {
     underscore: {
@@ -16,7 +19,7 @@ require.config({
       deps: ['jquery', 'underscore']
     },
     marionette: {
-      exports: 'Backbone.Marionette',
+      exports: 'Marionette',
       deps: ['backbone']
     }
   },
@@ -24,5 +27,5 @@ require.config({
 });
 
 require(['views/app'], function(AppView) {
-  new AppView;
+   AppView.start();
 });
