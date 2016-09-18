@@ -2,35 +2,35 @@ define([
 	'jquery',
 	'marionette',
 	'templates',
-	'json!data/gender.json',
+	'json!data/testGraph.json',
 	'highcharts',
 ], function ($,Marionette, templates, graphdata,highcharts) {
-	'use strict';
-
-	var Dashboard =  Marionette.ItemView.extend({
+	var Demographics =  Marionette.ItemView.extend({
 		template: templates.dashboard,
 		events: {
             //'click .test': 'test'
                // this.trigger('notification:close');
         },
-        
+        getDemographics : function() {
+        	window.app.content.show(this.render());
+        },
 		onRender: function() {
             this.$('.highchart').highcharts({
         		chart: {
 		            renderTo: 'highchart',
-		            type: graphdata.graphtype
+		            type: 'spline'
 		        },
 		        xAxis: {
-		            categories: graphdata.data.xaxis.label
+		            categories: graphdata.data.label
 		        },
 		        yAxis: {
 		            title: {
-		                text: graphdata.data.yaxis.label
+		                text: 'Temperature (°F)'
 		            }
 		        },
 		        series: [{
-		        	name : graphdata.data.xaxis.name,
-		        	data : graphdata.data.xaxis.datapoint
+		        	name : "Boston",
+		        	data : graphdata.data.datapoint
 
 		        }]
     		});
@@ -38,5 +38,5 @@ define([
         
 
 	});
-	return Dashboard;
+	return Demographics;
 });

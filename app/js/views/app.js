@@ -2,24 +2,28 @@ define([
 	'backbone',
 	'marionette',
 	'views/dashboard',
-	'views/sidebar'
-	], function(Backbone,Marionette,Dashboard, Sidebar) {
+	'views/sidebar',
+	'router',
+	'views/login'
+	], function(Backbone,Marionette,Dashboard, Sidebar, Router, Login) {
 
   var mApp = new Marionette.Application();
  
   mApp.addRegions({
 		menu: '#sidebar',
-		main: '#content',
+		content: '#content',
 		footer: '#footer'
 	});
 
   mApp.addInitializer(function () {
-        mApp.menu.show(new Sidebar());
-		mApp.main.show(new Dashboard());
+		mApp.content.show(new Login());
 	});
 
   mApp.on("start", function(){
-  	console.log("CM");
+    var router = new Router();
+    Backbone.history.start();
+  
   });
-  return mApp;
+  return window.app = mApp;
 });
+

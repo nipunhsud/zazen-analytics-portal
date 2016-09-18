@@ -8,7 +8,11 @@ require.config({
     'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr',
     'marionette': 'vendor/marionette/lib/core/backbone.marionette',
     'tpl': 'lib/tpl',
-    'bootstrap': 'lib/bootstrap.min'
+    'bootstrap': 'lib/bootstrap.min',
+    "json":"vendor/requirejs-plugins/src/json",
+    "highcharts":"vendor/highcharts/highcharts",
+    'templates': "templates",
+    'router': 'routers/router'
   },
   shim: {
     underscore: {
@@ -27,5 +31,7 @@ require.config({
 });
 
 require(['views/app'], function(AppView) {
+  
    AppView.start();
+
 });
