@@ -3,19 +3,22 @@ define([
 	'marionette',
 	'views/dashboard',
 	'views/sidebar',
+	'views/header',
 	'router',
 	'views/login'
-	], function(Backbone,Marionette,Dashboard, Sidebar, Router, Login) {
+	], function(Backbone,Marionette,Dashboard, Sidebar,Header, Router, Login) {
 
   var mApp = new Marionette.Application();
  
   mApp.addRegions({
+  		header: '#header',
 		menu: '#sidebar',
 		content: '#content',
 		footer: '#footer'
 	});
 
   mApp.addInitializer(function () {
+  		mApp.header.show(new Header());
 		mApp.content.show(new Login());
 	});
 

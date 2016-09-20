@@ -1,0 +1,22 @@
+ {
+  "graphtype": "bar",
+  "title" : "Historic World Population by Region",
+  "data": {
+    "xaxis": {
+      
+      "label": ["Africa", "America", "Asia", "Europe", "Oceania", "test"],
+      "name": "Average Price"
+    },
+    "yaxis": {
+      "name": "Population (millions)"
+    },
+    "series" :[{
+      "name" : "Year 2012",
+      "data" : [39, 42, 57, 89, 129, 153]       
+    },{
+      "name" : "Year 2010",
+      "data" : [100, 42, 57, 85, 119, 152] 
+    }]
+
+  }
+ }

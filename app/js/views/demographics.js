@@ -12,7 +12,7 @@ define([
                // this.trigger('notification:close');
         },
         getDemographics : function() {
-        	window.app.content.show(this.render());
+        	window.app.content.show(this.render(), { preventDestroy: true });
         },
 		onRender: function() {
             this.$('.highchart').highcharts({
