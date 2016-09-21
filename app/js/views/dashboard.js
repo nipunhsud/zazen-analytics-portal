@@ -15,7 +15,6 @@ define([
                // this.trigger('notification:close');
         },
         getGraph: function() {
-        	alert("dash");
         	window.app.content.show(this.render(), { preventDestroy: true });
         },
 		getSpline: function() {

@@ -17,7 +17,6 @@ define([
     },
     routes: {
         "dashboard/" : "dashboard",
-        //potentially user dashboard/dashName eg dashboard/gender
         "demographics/": "demographics",
         "gender/": "gender"
         // matches http://example.com/#anything-here
@@ -32,7 +31,6 @@ define([
     },
     demographics : function(){
       // Figure out how to call show, maybe use layout manager for layouts
-      alert("demo");
       demographic.getDemographics();
     },
     gender : function(){
