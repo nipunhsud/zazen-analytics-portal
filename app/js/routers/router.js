@@ -6,7 +6,8 @@ define([
   'views/demographics',
   'views/sidebar',
   'views/dashboard',
-], function (Backbone,$, _, Marionette,Demographic, Sidebar, Dashboard) {
+  'views/login'
+], function (Backbone,$, _, Marionette,Demographic, Sidebar, Dashboard, Login) {
   
  var demographic = new Demographic;
  var dashboard = new Dashboard;
@@ -16,17 +17,22 @@ define([
       //alert("route created");
     },
     routes: {
-        "dashboard/" : "dashboard",
-        "demographics/": "demographics",
-        "gender/": "gender"
+        "home" : "appStart",
+        "dashboard" : "dashboard",
+        "demographics": "demographics",
+        "gender": "gender"
         // matches http://example.com/#anything-here
+    },
+    appStart : function () {
+      window.app.menu.remove(new Sidebar);
+      window.app.content.show(new Login());
     },
     dashboard : function() {
       window.app.addRegions({
         menu: '#sidebar'
       });
       window.app.content.show(new Dashboard, { preventDestroy: true });
-      window.app.menu.show(new Sidebar);
+      window.app.menu.show(new Sidebar, { preventDestroy: true });
       
     },
     demographics : function(){
